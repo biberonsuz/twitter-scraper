@@ -12,8 +12,8 @@ with open('twitter_credentials.json') as cred_data:
 
 consumer_key = info['CONSUMER_KEY']
 consumer_secret = info['CONSUMER_SECRET']
-access_key = info['ACCESS_KEY']
-access_secret = info['ACCESS_SECRET']
+access_token = info['ACCESS_TOKEN']
+access_secret = info['ACCESS_TOKEN_SECRET']
 
 # Create the Tweepy api endpoint
 auth = tweepy.AppAuthHandler(consumer_key, consumer_secret)
@@ -34,7 +34,7 @@ def scrape(hashtag, language, date):
 
 	print(date)
 
-	for tweet in tweepy.Cursor(api.search, q='#' + translated, lang=language, since=date, include_entities=True, tweet_mode='extended').items():
+	for tweet in tweepy.Cursor(api.search_full_archive, environment_name='FullArchive', q='#' + translated, lang=language, since=date, include_entities=True).items():
 		# Get tweets as json objects
 		if 'media' in tweet.entities:
 			no_media_tweets += 1
@@ -47,7 +47,7 @@ def scrape(hashtag, language, date):
 			#translationEng = toEng.translate(translationLang)
 	 		#utf / txt issue with non latin characters and emojis. Probably bit difference?
 
-	print(f'Extracted tweets with hashtag #{hashtag} ({translationLang})', f'{no_media_tweets} tweets found that contain media.')
+	print(f'Extracted tweets with hashtag #{hashtag} ({translated})', f'{no_media_tweets} tweets found that contain media.')
 
 # Hashtag/s to search for
 hashtag = 'teargas'
