@@ -1,0 +1,221 @@
+[
+ {
+   "Name": "U.S. Capitol Protest",
+   "Date": 202101060000,
+   "Location": "United States Capitol, Washington DC, United States",
+   "Coordinates": "38°53′23.3″N 77°00′32.6″W",
+   "Language": "en"
+ },
+ {
+   "Name": "Beirut Port explosion",
+   "Date": 202008040000,
+   "Location": "Port of Beirut, Beirut, Lebanon",
+   "Coordinates": "33°54′05″N 35°31′08″E",
+   "Language": "ar"
+ },
+ {
+   "Name": "Belarusian protests",
+   "Date": 202005240000,
+   "Location": "Belarus",
+   "Coordinates": "",
+   "Language": 
+   [
+      "be", 
+      "ru"
+   ]
+ },
+ {
+   "Name": "George Floyd Protest",
+   "Date": 202005260000,
+   "Location": "Minnesota, United States",
+   "Coordinates": "",
+   "Language": "en"
+ },
+ {
+   "Name": "+Related Police Brutality Protests (ongoing)",
+   "Date": [
+      202005260000,
+      202102210000
+   ],
+   "Location": "Mainly US, but also around the world",
+   "Coordinates": "",
+   "Language": "en"
+ },
+ {
+   "Name": "Demonstration Global security law",
+   "Date": 202011290000,
+   "Location": "Paris (+others), France",
+   "Coordinates": "",
+   "Language": "fr"
+ },
+ {
+   "Name": "Guatemalan protests",
+   "Date": 202011210000,
+   "Location": "Guatemala City, Guatemala",
+   "Coordinates": "",
+   "Language": "es"
+ },
+ {
+   "Name": "International women's day ",
+   "Date": 202003080000,
+   "Location": "Istanbul, Turkey",
+   "Coordinates": "",
+   "Language": "tr"
+ },
+ {
+   "Name": "Chilean protests",
+   "Date": 201910140000,
+   "Location": "Plaza de la Dignidad, Santiago de Chile",
+   "Coordinates": "",
+   "Language": "es"
+ },
+ {
+   "Name": "Hong Kong protests",
+   "Date": 201903150000,
+   "Location": "Hong Kong ",
+   "Coordinates": "",
+   "Language": 
+   [
+      "en", 
+      "zh"
+   ]
+ },
+ {
+   "Name": "Yellow vests movement",
+   "Date": 201811170000,
+   "Location": "France",
+   "Coordinates": "",
+   "Language": "fr"
+ },
+ {
+   "Name": "Douma chemical attack",
+   "Date": 201804070000,
+   "Location": "Douma, Rif Dimashq Governorate, Syria",
+   "Coordinates": "33°34′16″N 36°24′17″E",
+   "Language": "ar"
+ },
+ {
+   "Name": "Anti-G20 protest",
+   "Date": 201808080000,
+   "Location": "Hamburg, Germany",
+   "Coordinates": "",
+   "Language": "de"
+ },
+ {
+   "Name": "Gaza border Protest ( Great March of Return)",
+   "Date": [
+      201803300000, 
+      201912270000
+   ],
+   "Location": "Gaza Strip, Near Israeli Border",
+   "Coordinates": "",
+   "Language": 
+   [
+      "he", 
+      "ar"
+   ]
+ },
+ {
+   "Name": " Romanian protests",
+   "Date": [
+      201701180000, 
+      201908100000
+   ],
+   "Location": "Romania",
+   "Coordinates": "",
+   "Language": "ro"
+ },
+ {
+   "Name": "End SARS Protest",
+   "Date": 202010090000,
+   "Location": "Abuja, Nigeria",
+   "Coordinates": "",
+   "Language": "en"
+ },
+ {
+   "Name": "Peruvian Protests",
+   "Date": [
+      202011090000, 
+      202012050000
+   ],
+   "Location": "Peru",
+   "Coordinates": "",
+   "Language": 
+   [
+      "es", 
+      "ay"
+   ]
+ },
+ {
+   "Name": "Polish Abortion Protests",
+   "Date": 202101290000,
+   "Location": "Poland",
+   "Coordinates": "",
+   "Language": "pl"
+ },
+ {
+   "Name": "Myanmar Protests (ongoing)",
+   "Date": [
+      202102020000, 
+      202102260000
+   ],
+   "Location": "Myanmar",
+   "Coordinates": "",
+   "Language": "my"
+ },
+ {
+   "Name": "Boğaziçi Protests (ongoing)",
+   "Date": 202101040000,
+   "Location": "Beşiktaş, Istanbul, Turkey",
+   "Coordinates": "41.0848° N, 29.0510° E",
+   "Language": "tr"
+ },
+ {
+   "Name": "Uganda Elections",
+   "Date": [
+      202012010000, 
+      202101200000
+   ],
+   "Location": "Uganda",
+   "Coordinates": "",
+   "Language": 
+   [
+      "sw", 
+      "en"
+   ]
+ },
+ {
+   "Name": "Kenya COVID Curfew",
+   "Date": 202003270000,
+   "Location": "Mombasa, Kenya",
+   "Coordinates": "",
+   "Language": 
+   [
+      "sw", 
+      "en"
+   ]
+ },
+ {
+   "Name": "French Global Security",
+   "Date": 202012150000,
+   "Location": "Lyon, France",
+   "Coordinates": "",
+   "Language": "fr"
+ },
+ {
+   "Name": "Serbian Curfew Protest",
+   "Date": 202007090000,
+   "Location": "Belgrade, Serbia",
+   "Coordinates": "",
+   "Language": "sr"
+ },
+ {
+   "Name": "Dutch Anti-Lockdown Riots",
+   "Date": [
+      202101230000, 
+      202101260000
+   ],
+   "Location": "Netherlands",
+   "Language": "nl"
+ }
+]
