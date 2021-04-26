@@ -30,44 +30,45 @@ def scrape(hashtag, language, date):
 	result = translator.translate(hashtag, dest=language)
 	translated = result.text
 
+	
+	date_since = datetime.datetime.strptime(date, '%b %d %Y')
+	date_until = date_since + datetime.timedelta(days=6)
+
 	no_media_tweets = 0
+	no_retweets = 0
 
-	print(date)
-
-	for tweet in tweepy.Cursor(api.search_full_archive, environment_name='FullArchive', q='#' + translated, lang=language, since=date, include_entities=True).items():
+	for status in tweepy.Cursor(api.search, q='#' + translated, lang=language, include_entities=True, result_type='mixed').items(200):
 		# Get tweets as json objects
-		if 'media' in tweet.entities:
+		if hasattr(status.entities, 'media'):
 			no_media_tweets += 1
-			for image in tweet.entities['media']:
+			for image in status.entities['media']:
 	 			wget.download(image['media_url'], out = hashtag)
 
 		with open('tweets_with_hashtag_' + hashtag + '.txt', 'a') as the_file:
-	 		the_file.write(str(tweet.full_text.encode('utf-8')) + '\n')
-	 		#toEng=Translator(from_lang= 'ar', to_lang='en')
-			#translationEng = toEng.translate(translationLang)
-	 		#utf / txt issue with non latin characters and emojis. Probably bit difference?
+	 		the_file.write(str(status.id) + '\n' + str(status.text) + '\n')
 
-	print(f'Extracted tweets with hashtag #{hashtag} ({translated})', f'{no_media_tweets} tweets found that contain media.')
+	 	if hasattr(status, 'retweeted_status'):
+			quote = status.retweeted_status
+			print(quote)
+
+		print(f'Extracted tweets with hashtag #{hashtag} ({translated})', f'{no_media_tweets} tweets found that contain media.')
 
 # Hashtag/s to search for
 hashtag = 'teargas'
 
 translator = Translator(service_urls=['translate.googleapis.com'])
-result = translator.translate(hashtag, dest='ar')
-print(result.text)
 
 # Make a directory for hashtag
 if not os.path.exists(hashtag):
     os.makedirs(hashtag)
 
 # Get Language and Date from events.json
-for i in range(len(events)):
+for i in range(3):#len(events)):
 	lang_str = events[i]['Language']
 	date_str = events[i]['Date']
 
 	# take the first date, if there the event is between two dates.
 	if isinstance(date_str, list):
-		print(date_str)
 		if isinstance(lang_str, list):
 			scrape(hashtag, lang_str[0], date)
 			scrape(hashtag, lang_str[1], date)
