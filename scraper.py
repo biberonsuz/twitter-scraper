@@ -26,7 +26,7 @@ with open('events.json') as events_json:
 #set translator for Google API.
 translator = Translator(service_urls=['translate.googleapis.com'])
 
-def scrape(hashtag, language, date):
+def scrape(hashtag, language, date, counter):
 	result = translator.translate(hashtag, dest=language)
 	translated = result.text
 
@@ -44,12 +44,15 @@ def scrape(hashtag, language, date):
 			for image in status.entities['media']:
 	 			wget.download(image['media_url'], out = hashtag)
 
-		with open('tweets_with_hashtag_' + hashtag + '.txt', 'a') as the_file:
-	 		the_file.write(str(status.id) + '\n' + str(status.text) + '\n')
+			counter+=1
 
-	 	if hasattr(status, 'retweeted_status'):
-			quote = status.retweeted_status
-			print(quote)
+			txtfile = image['media_url'].split( '/' ).pop( )
+			with open(hashtag + '/' + txtfile + '.' + str(counter) + '.txt', 'a') as the_file:
+				the_file.write(str(tweet.full_text) + '\n')
+
+	 	# if hasattr(status, 'retweeted_status'):
+			# quote = status.retweeted_status
+			# print(quote)
 
 		print(f'Extracted tweets with hashtag #{hashtag} ({translated})', f'{no_media_tweets} tweets found that contain media.')
 
@@ -70,17 +73,23 @@ for i in range(3):#len(events)):
 	# take the first date, if there the event is between two dates.
 	if isinstance(date_str, list):
 		if isinstance(lang_str, list):
-			scrape(hashtag, lang_str[0], date)
-			scrape(hashtag, lang_str[1], date)
+			counter =0;
+			scrape(hashtag, lang_str[0], date, counter)
+			counter =0;
+			scrape(hashtag, lang_str[1], date, counter)
 		else:
-			scrape(hashtag, lang_str, date)
+			counter =0;
+			scrape(hashtag, lang_str, date, counter)
 	else:
 		date = date_str
 		if isinstance(lang_str, list):
-			scrape(hashtag, lang_str[0], date)
-			scrape(hashtag, lang_str[1], date)
+			counter =0;
+			scrape(hashtag, lang_str[0], date, counter)
+			counter =0;
+			scrape(hashtag, lang_str[1], date, counter)
 		else:
-			scrape(hashtag, lang_str, date)
+			counter =0;
+			scrape(hashtag, lang_str, date, counter)
 
 	
 

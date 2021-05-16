@@ -13,20 +13,13 @@ with open('twitter_credentials.json') as cred_data:
 
 consumer_key = info['CONSUMER_KEY']
 consumer_secret = info['CONSUMER_SECRET']
-access_key = info['ACCESS_KEY']
-access_secret = info['ACCESS_SECRET']
+access_token = info['ACCESS_TOKEN']
+access_secret = info['ACCESS_TOKEN_SECRET']
 
 # Create the api endpoint
 
 auth = tweepy.AppAuthHandler(consumer_key, consumer_secret)
 api = tweepy.API(auth)
-
-# Maximum number of tweets shown per page (max=100)
-
-tweets_per_page = 100
-
-# Number of pages to search in
-page_amount = 10
 
 # Hashtag to search for
 
